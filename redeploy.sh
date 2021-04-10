@@ -3,6 +3,10 @@
 docker stop website
 docker rm website
 
+service nginx start
+certbot-auto -d "thommil.com,anglerspro.shop,tge-demo.thommil.com"
+service nginx stop
+
 cp /etc/letsencrypt/live/thommil.com/fullchain.pem ssl/server.crt
 cp /etc/letsencrypt/live/thommil.com/privkey.pem ssl/server.key
 
